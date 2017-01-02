@@ -4,8 +4,14 @@ function getQuote() {
 	var qText = document.getElementById("randQuoteText");
 	var qAuth = document.getElementById("randQuoteAuthor");
 	$.ajax({
-		url: "http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en",
-		type: 'GET',
+		url: "http://api.forismatic.com/api/1.0/",
+		jsonp: "jsonp",
+	    dataType: "jsonp",
+	      data: {
+	        method: "getQuote",
+	        lang: "en",
+	        format: "jsonp"
+	      },
 		success: function(results) {
 			//alert(results.quoteText+results.quoteAuthor);
 			qText.innerHTML = '"' + results.quoteText + '"';
