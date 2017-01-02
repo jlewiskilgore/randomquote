@@ -6,6 +6,10 @@ h1 {
 	background-color: red;
 }
 
+p {
+	font-size: 200%;
+}
+
 #quote {
 	border: 5px solid black;
 	padding-top: 50px;
