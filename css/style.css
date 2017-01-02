@@ -1,0 +1,13 @@
+body {
+	background-color: blue;
+}
+
+h1 {
+	background-color: red;
+}
+
+#quote {
+	border: 5px solid black;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
