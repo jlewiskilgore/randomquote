@@ -9,7 +9,11 @@ function getQuote() {
 		success: function(results) {
 			//alert(results.quoteText+results.quoteAuthor);
 			qText.innerHTML = '"' + results.quoteText + '"';
-			qAuth.innerHTML = '- ' + results.quoteAuthor;
+			//Show author if exits, if not it is an anonymous quote
+			if(results.quoteAuthor)
+				qAuth.innerHTML = '- ' + results.quoteAuthor;
+			else
+				qAuth.innerHTML = '- Anonymous';
 		}
 	});
 }
