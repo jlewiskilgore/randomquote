@@ -32,8 +32,9 @@ function getQuote() {
 //TODO: Check for lenght of quote
 //TODO: Add hashtags if there is extra space
 function tweetQuote() {
-	var qText = document.getElementById("randQuoteText");
-	var qAuth = document.getElementById("randQuoteAuthor");
-	var tweetURL = 'http://twitter.com/intent/tweet?text='+qText.innerHTML+' '+qAuth.innerHTML;
+	var quoteBody = document.getElementById("randQuoteText").innerHTML;
+	quoteBody = quoteBody.replace(";","%3B");
+	var quoteAuthor = document.getElementById("randQuoteAuthor").innerHTML;
+	var tweetURL = 'http://twitter.com/intent/tweet?text='+quoteBody+' '+quoteAuthor;
 	window.open(tweetURL);
 }
