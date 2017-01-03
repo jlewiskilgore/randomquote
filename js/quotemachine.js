@@ -1,6 +1,11 @@
-//TODO: Function will quote Quote API and return string to render
+$(document).ready(function(){ 
+	$("#tweetQuoteButton").hide();
+}) 
+
 function getQuote() {
 	//alert("getQuote button pressed");
+	$("#tweetQuoteButton").show();
+
 	var qText = document.getElementById("randQuoteText");
 	var qAuth = document.getElementById("randQuoteAuthor");
 	$.ajax({
@@ -24,6 +29,11 @@ function getQuote() {
 	});
 }
 
+//TODO: Check for lenght of quote
+//TODO: Add hashtags if there is extra space
 function tweetQuote() {
-	alert("tweetQuote button pressed");
+	var qText = document.getElementById("randQuoteText");
+	var qAuth = document.getElementById("randQuoteAuthor");
+	var tweetURL = 'http://twitter.com/intent/tweet?text='+qText.innerHTML+' '+qAuth.innerHTML;
+	window.open(tweetURL);
 }
